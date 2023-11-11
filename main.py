@@ -170,7 +170,7 @@ def main_worker(gpu, ngpus_per_node, args, current_node_GPU_counts):
     print("Parameters details")
     for name, param in model.named_parameters():
         if param.requires_grad:
-            print name, param.data
+            print(name," ",param.data)
     
     from torchsummary import summary
     print("Summary details")
