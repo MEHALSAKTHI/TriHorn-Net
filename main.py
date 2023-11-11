@@ -174,7 +174,7 @@ def main_worker(gpu, ngpus_per_node, args, current_node_GPU_counts):
     
     from torchsummary import summary
     print("Summary details")
-    print(summary(model, (14, 64, 64))
+    print(summary(model, (14, 64, 64)))
 
 ########################## Main Loop ##########################
     Train(model, data_loaders, args,lossFunction,optimizer,device,scheduler, fp16_scaler, rank)
