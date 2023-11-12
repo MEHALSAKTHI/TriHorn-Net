@@ -172,9 +172,9 @@ def main_worker(gpu, ngpus_per_node, args, current_node_GPU_counts):
     #     if param.requires_grad:
     #         print(name," ",param.data)
     
-    from torchsummary import summary
-    print("Summary details")
-    print(summary(model, (1,224,224)))
+    # from torchsummary import summary
+    # print("Summary details")
+    # print(summary(model, (1,224,224)))
 
 ########################## Main Loop ##########################
     Train(model, data_loaders, args,lossFunction,optimizer,device,scheduler, fp16_scaler, rank)
