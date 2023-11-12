@@ -492,10 +492,15 @@ class ICVLHandPoseDataset(HandPoseDataset):
             self.seqName = "test"
 
         address=os.path.join(basepath,"%s.pickle"%(self.seqName))
-    
+        print("address:")
+        print(address)
         data=pickle.load(open(address, "rb"))
         self.data=data[0]
-    
+        print("data")
+        print(data)
+        print("data[0]")               
+                    
+                     
 
         self.numSamples = len(self.data)
 
