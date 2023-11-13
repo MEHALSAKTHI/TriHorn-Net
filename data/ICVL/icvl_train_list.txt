@@ -1,3 +1,5 @@
 /kaggle/input/leapgestrecog/leapGestRecog/00/01_palm/frame_00_01_0001.png
 /kaggle/input/leapgestrecog/leapGestRecog/00/01_palm/frame_00_01_0002.png
 /kaggle/input/leapgestrecog/leapGestRecog/00/01_palm/frame_00_01_0003.png
+/kaggle/input/leapgestrecog/leapGestRecog/07/01_palm/frame_07_01_0001.png
+/kaggle/input/leapgestrecog/leapGestRecog/07/01_palm/frame_07_01_0002.png
