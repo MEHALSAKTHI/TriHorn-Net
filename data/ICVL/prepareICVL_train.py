@@ -484,7 +484,7 @@ class ICVLImporter(DepthImporter):
         # Load the dataset
         # objdir = '{}/Depth/'.format(self.basepath)
         objdir = '/kaggle/input/leapgestrecog/leapGestRecog/01/'
-        trainlabels = '/kaggle/input/icvl-dataset-full/Training/labels.txt'
+        trainlabels = '/kaggle/working/TriHorn-Net/data/ICVL/leap_input.txt'
         
         f = open("icvl_train_list.txt", "r")
         ll = f.readlines()
