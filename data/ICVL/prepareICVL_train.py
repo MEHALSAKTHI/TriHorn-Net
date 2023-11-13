@@ -510,7 +510,7 @@ class ICVLImporter(DepthImporter):
             if part[0] not in ll:
                 continue
         
-            dptFileName = str(part[0]).strip()).strip()
+            dptFileName = str(part[0]).strip()
             # dptFileName = '{}/{}'.format(objdir, part[0])
 
             if os.path.isfile(dptFileName):
