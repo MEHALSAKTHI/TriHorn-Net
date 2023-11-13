@@ -23,7 +23,7 @@ def save_feature_vectors(feature_vectors, file_path):
             for vector in vectors:
                 for value in vector:
                     file.write(f"{value} ")
-                file.write("\n")
+                file.write("\n\n")
 
 
 @torch.no_grad()
@@ -95,6 +95,8 @@ def evaluate(model_path, model_name, loader, args, test_set, OutputToPred, print
 
     if save_features:
         feature_file_path = "feature_result.txt"
+        print("feature_vectors")
+        print(feature_vectors)
         save_feature_vectors(feature_vectors, feature_file_path)
 
     if args.save_results:
