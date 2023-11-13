@@ -452,7 +452,8 @@ class ICVLImporter(DepthImporter):
 
         assert len(img.getbands()) == 1  # ensure depth image
         imgdata = numpy.asarray(img, numpy.float32)
-
+        print("image data taken")
+        print(imgdata)
         return imgdata
 
     
@@ -523,6 +524,8 @@ class ICVLImporter(DepthImporter):
         
             # joints in image coordinates
             gtorig = numpy.zeros((self.numJoints, 3), numpy.float32)
+            print("part:")
+            print(part)
             for joint in range(self.numJoints):
                 for xyz in range(0, 3):
                     gtorig[joint, xyz] = part[joint * 3 + xyz + 1]
