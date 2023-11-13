@@ -512,7 +512,9 @@ class ICVLImporter(DepthImporter):
         
             dptFileName = str(str(objdir).strip()+str(part[0]).strip()).strip()
             # dptFileName = '{}/{}'.format(objdir, part[0])
-        
+
+            if os.path.isfile("/kaggle/input/leapgestrecog/leapGestRecog/01/01_palm/frame_01_01_0001.png"):
+                print("yes im there")
             if not os.path.isfile("/kaggle/input/leapgestrecog/leapGestRecog/01/01_palm/frame_01_01_0001.png"):
                 print("File {} does not exist!".format(dptFileName))
                 i += 1
