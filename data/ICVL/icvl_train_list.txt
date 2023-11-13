@@ -1,3 +1,2 @@
 01_palm/frame_01_01_0001.png
 01_palm/frame_01_01_0002.png
-01_palm/frame_01_01_0003.png
