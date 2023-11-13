@@ -485,59 +485,56 @@ class ICVLImporter(DepthImporter):
         objdir = '/kaggle/input/leapgestrecog/leapGestRecog/01/'
         trainlabels = '/kaggle/working/TriHorn-Net/data/ICVL/icvl_train_list.txt'
         
-        f=open("icvl_train_list.txt", "r")
-        ll=f.readlines()
-        for i in range(0,len(ll)-1):
-            ll[i]=ll[i][:-1]
-            
-            
+        f = open("icvl_train_list.txt", "r")
+        ll = f.readlines()
+        for i in range(0, len(ll) - 1):
+            ll[i] = ll[i][:-1]
+        
         inputfile = open(trainlabels)
-
-        txt = 'Loading {}'.format(seqName)
+        
+        txt = 'Loading {}'.format(trainlabels)  # Assuming seqName was supposed to be trainlabels
         pbar = pb.ProgressBar(maxval=len(inputfile.readlines()), widgets=[txt, pb.Percentage(), pb.Bar()])
         pbar.start()
         inputfile.seek(0)
-
+        
         data = []
         i = 0
         for line in inputfile:
             # early stop
             if len(data) >= Nmax:
                 break
-
+        
             part = line.split(' ')
             # check for subsequences and skip them if necessary
-            
+        
             if part[0] not in ll:
                 continue
-           
-           
+        
             dptFileName = '{}/{}'.format(objdir, part[0])
-
+        
             if not os.path.isfile(dptFileName):
                 print("File {} does not exist!".format(dptFileName))
                 i += 1
                 continue
             dpt = self.loadDepthMap(dptFileName)
-
+        
             # joints in image coordinates
             gtorig = numpy.zeros((self.numJoints, 3), numpy.float32)
             for joint in range(self.numJoints):
                 for xyz in range(0, 3):
-                    gtorig[joint, xyz] = part[joint*3+xyz+1]
- 
+                    gtorig[joint, xyz] = part[joint * 3 + xyz + 1]
+        
             # normalized joints in 3D coordinates
             gt3Dorig = self.jointsImgTo3D(gtorig)
-
-           
+        
             data.append([dpt, gtorig, gt3Dorig, dptFileName])
             pbar.update(i)
             i += 1
-
+        
         inputfile.close()
         pbar.finish()
         print("Loaded {} samples.".format(len(data)))
-
+        
         if shuffle and rng is not None:
             print("Shuffling")
             rng.shuffle(data)
