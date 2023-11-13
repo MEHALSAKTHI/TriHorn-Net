@@ -510,7 +510,8 @@ class ICVLImporter(DepthImporter):
             if part[0] not in ll:
                 continue
         
-            dptFileName = '{}/{}'.format(objdir, part[0])
+            dptFileName = str(objdir)+str(part[0])
+            # dptFileName = '{}/{}'.format(objdir, part[0])
         
             if not os.path.isfile(dptFileName):
                 print("File {} does not exist!".format(dptFileName))
