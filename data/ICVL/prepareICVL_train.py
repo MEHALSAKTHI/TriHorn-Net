@@ -528,7 +528,7 @@ class ICVLImporter(DepthImporter):
             print(part)
             for joint in range(self.numJoints):
                 for xyz in range(0, 3):
-                    gtorig[joint, xyz] = part[joint * 3 + xyz + 1]
+                    gtorig[joint, xyz] = dpt[joint * 3 + xyz + 1]
         
             # normalized joints in 3D coordinates
             gt3Dorig = self.jointsImgTo3D(gtorig)
