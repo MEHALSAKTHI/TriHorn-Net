@@ -482,7 +482,7 @@ class ICVLImporter(DepthImporter):
 
         # Load the dataset
         # objdir = '{}/Depth/'.format(self.basepath)
-        objdir = '/kaggle/input/leapgestrecog/01'
+        objdir = '/kaggle/input/leapgestrecog/leapGestRecog/01/'
         trainlabels = '/kaggle/working/TriHorn-Net/data/ICVL/icvl_train_list.txt'
         
         f=open("icvl_train_list.txt", "r")
