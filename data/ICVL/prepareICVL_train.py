@@ -514,8 +514,8 @@ class ICVLImporter(DepthImporter):
             dptFileName = str(part[0]).strip()
             # dptFileName = '{}/{}'.format(objdir, part[0])
 
-            if os.path.isfile(dptFileName):
-                print("yes im there")
+            # if os.path.isfile(dptFileName):
+                # print("yes im there")
             if not os.path.isfile(dptFileName):
                 print("File {} does not exist!".format(dptFileName))
                 i += 1
@@ -524,8 +524,8 @@ class ICVLImporter(DepthImporter):
         
             # joints in image coordinates
             gtorig = numpy.zeros((self.numJoints, 3), numpy.float32)
-            print("part:")
-            print(part)
+            # print("part:")
+            # print(part)
             for joint in range(self.numJoints):
                 for xyz in range(0, 3):
                     gtorig[joint, xyz] = part[joint * 3 + xyz + 1]
