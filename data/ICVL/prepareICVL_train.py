@@ -452,8 +452,8 @@ class ICVLImporter(DepthImporter):
 
         assert len(img.getbands()) == 1  # ensure depth image
         imgdata = numpy.asarray(img, numpy.float32)
-        print("image data taken")
-        print(imgdata)
+        # print("image data taken")
+        # print(imgdata)
         return imgdata
 
     
